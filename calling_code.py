@@ -18,9 +18,10 @@ def test_f_norm():
     rng = np.random.default_rng()
     X = rng.standard_normal(size=(500, 5), dtype=np.float64)
     f_norm_extension = my_extension.f_norm(X)
-    f_norm_numpy = la.norm(X, 'fro')
-    print(f"F norm by Python extension is {f_norm_extension:3f}.")
-    print(f"F norm by Numpy is {f_norm_numpy:3f}.")
+    print(f"Extension Fro. norm is {f_norm_extension:.2f}")
+
+    f_norm_numpy = np.linalg.norm(X, "fro")
+    print(f"Numpy Fro. norm is     {f_norm_numpy:.2f}")
 
 def add3_mutate():
     X = np.ones(shape=(2, 2), dtype=np.float64)
